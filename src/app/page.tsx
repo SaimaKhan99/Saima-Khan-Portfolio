@@ -1,7 +1,7 @@
 export default function Home() {
   return (
-    <div>
-      <h1>Welcome to My Portfolio</h1>
-    </div>
+    <main>
+      <h1>Welcome to Saima Khan Portfolio</h1>
+    </main>
   );
 }
