@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Photography Website
 
 A modern photography portfolio website built with Next.js 16, featuring interactive maps, photo management, and a comprehensive dashboard.
@@ -425,3 +426,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ---
 
 **Need help?** Check the troubleshooting section above or open an issue in the repository.
+=======
+# Saima-Khan-Portfolio
+Dynamic portfolio made on TypeScript using Tailwind components 
+>>>>>>> ce2f7f539f68d4f173dc41fc7cb9bebcf8d41b5b
