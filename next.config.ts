@@ -6,21 +6,12 @@ const s3Hostname = s3Url ? s3Url.hostname : "";
 const s3Protocol = s3Url ? s3Url.protocol.replace(":", "") : "https";
 
 const nextConfig: NextConfig = {
-  output: "standalone",
-  /* config options here */
+  output: "export",
   reactCompiler: true,
   images: {
+    unoptimized: true,
     qualities: [65, 75],
     remotePatterns: [
-      ...(s3Hostname
-        ? [
-            {
-              protocol: s3Protocol as "http" | "https",
-              hostname: s3Hostname,
-              port: s3Url?.port || "",
-            },
-          ]
-        : []),
       {
         protocol: "https",
         hostname: "i.pinimg.com",
@@ -28,5 +19,6 @@ const nextConfig: NextConfig = {
     ],
   },
 };
+
 
 export default nextConfig;
