@@ -1,14 +1,12 @@
 import type { Metadata } from "next";
-import { ReactNode } from "react";
-
 import "./globals.css";
 
 import { NuqsAdapter } from "nuqs/adapters/next/app";
 import { Toaster } from "@/components/ui/sonner";
 import { ThemeProvider } from "@/components/theme-provider";
+import { VercelAnalytics } from "@/components/vercel-analytics";
 // Vercel Analytics
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { Analytics } from "@vercel/analytics/next";
 
 import { Readex_Pro } from "next/font/google";
 
@@ -17,15 +15,18 @@ const readexPro = Readex_Pro({
 });
 
 export const metadata: Metadata = {
-  title: "Saima Khan Portfolio",
-  description: "Photography Portfolio",
+  title: {
+    template: "%s - Developer Portfolio",
+    default: "Saima - Senior QA Automation Lead",
+  },
+  description: "Delivering high-quality, scalable testing solutions across web, API, mobile, and cloud-based platforms",
 };
 
 export default function RootLayout({
   children,
-}: {
-  children: ReactNode;
-}) {
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${readexPro.className} antialiased`}>
@@ -36,7 +37,7 @@ export default function RootLayout({
           </ThemeProvider>
         </NuqsAdapter>
         <SpeedInsights />
-        <Analytics />
+        <VercelAnalytics />
       </body>
     </html>
   );
